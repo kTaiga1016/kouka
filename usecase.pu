@@ -6,7 +6,7 @@ actor Admin as "管理者"
 actor Carrier as "運送会社"
 actor CreditCompany as "クレジットカード会社"
 
-rectangle "注文管理システム" {
+rectangle "BBシステム"{
   (新規登録) as UC1
   (ログイン/ログアウト) as UC2
   (退会) as UC3
@@ -21,6 +21,9 @@ rectangle "注文管理システム" {
   
   (お問い合わせ送信) as UC11
   (ご利用ガイド参照) as UC13
+} 
+
+rectangle "注文管理システム" {
 
   (顧客一覧確認) as UC14
   (注文一覧確認) as UC15
