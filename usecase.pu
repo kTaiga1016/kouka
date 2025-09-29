@@ -1,27 +1,73 @@
 @startuml  
 left to right direction
-actor 顧客
-actor 運送会社
-actor カード会社
 
+actor Customer as "顧客"
+actor Admin as "管理者"
+actor Carrier as "運送会社"
+actor CreditCompany as "クレジットカード会社"
 
-rectangle   注文管理システム {
-顧客 --> (ログイン)
-顧客 --> (ログアウト)
-顧客 --> (商品を選択)
-顧客 --> (カートに追加 / 商品の購入)
-顧客 --> (注文履歴の閲覧)
-顧客 --> (返金のリクエスト)
-(返金のリクエスト) --> (カード会社)
+rectangle "注文管理システム" {
+  (新規登録) as UC1
+  (ログイン/ログアウト) as UC2
+  (退会) as UC3
+  (マイページ参照/編集) as UC4
+  (商品一覧表示) as UC5
+  (商品検索) as UC6
+  (カートに入れる) as UC7
+  (商品購入) as UC8
+  (注文履歴参照/キャンセル) as UC9
+  (配送状況確認) as UC10
+  (返金依頼) as UC12
+  
+  (お問い合わせ送信) as UC11
+  (ご利用ガイド参照) as UC13
 
-(商品の購入) --> (クレジットカード決済)
-(商品の購入) --> (在庫管理)
-(商品の購入) --> (商品発送の準備)
-(在庫管理) --> 運送会社
-(商品発送完了の通知) --> 顧客
-運送会社 --> (商品発送完了の通知)
+  (顧客一覧確認) as UC14
+  (注文一覧確認) as UC15
+  (発送準備/発送通知) as UC16
+  (発送済み一覧確認) as UC17
+  (返金対応処理) as UC18
+  
+  (問い合わせ一覧確認) as UC19
+  (問い合わせ返信) as UC20
+  
+  (商品追加) as UC21
+  (在庫管理/入荷通知) as UC22
+  (売上確認) as UC23
 
-
-(クレジットカード決済) --> カード会社
+  (配送処理) as UC24
+  (クレジットカード決済処理) as UC25
 }
+
+
+Customer --> UC1
+Customer --> UC2
+Customer --> UC3
+Customer --> UC4
+Customer --> UC5
+Customer --> UC6
+Customer --> UC7
+Customer --> UC8
+Customer --> UC9
+Customer --> UC10
+Customer --> UC12
+Customer --> UC11
+Customer --> UC13
+
+
+Admin --> UC14
+Admin --> UC15
+Admin --> UC16
+Admin --> UC17
+Admin --> UC18
+Admin --> UC19
+Admin --> UC20
+Admin --> UC21
+Admin --> UC22
+Admin --> UC23
+
+
+Carrier --> UC24
+CreditCompany --> UC25
+
 @enduml
