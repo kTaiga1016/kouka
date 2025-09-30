@@ -10,53 +10,64 @@ actor Salesmanager as "売上管理者"
 
 
 rectangle "BBシステム" {
-  (新規登録) as UC1
-  (ログイン/ログアウト) as UC2
-  (退会) as UC3
-  (マイページ参照/編集) as UC4
-  (商品一覧表示) as UC5
-  (商品検索) as UC6
+  (新規登録する) as UC1
+  (ログインする) as UC2
+  (ログアウトする) as UC28
+  (退会する) as UC3
+  (マイページを参照する) as UC4
+  (マイページを編集する) as UC26
+  (商品一覧を表示する) as UC5
+  (商品検索する) as UC6
   (カートに入れる) as UC7
-  (商品購入) as UC8
-  (注文履歴参照/キャンセル) as UC9
-  (配送状況確認) as UC10
-  (返金依頼) as UC12
+  (カートから商品を削除する) as UC29
+  (商品を購入する) as UC8
+  (注文履歴を参照する) as UC9
+  (注文のキャンセルを行う) as UC27
+  (発送確認をする) as UC10
+  (在庫切れ商品の入荷通知を依頼する) as UC25
+  (返金依頼をする) as UC12
   
-  (お問い合わせ送信) as UC11
+  (お問い合わせを送信する) as UC11
   (ご利用ガイド参照) as UC13
 } 
 
 
 rectangle "注文管理システム" {
-  (顧客一覧確認) as UC14
-  (注文一覧確認) as UC15
+  (顧客一覧を照会する) as UC14
+  (注文一覧を照会する) as UC15
 
-  (発送準備/発送通知) as UC16
-  (発送済み一覧確認) as UC17
+  (発送準備を行う) as UC16
+  (発送通知をする) as UC30
+  (発送済み商品一覧照会を行う) as UC17
 
-  (返金対応処理) as UC18
-  (問い合わせ一覧確認) as UC19
-  (問い合わせ返信) as UC20
+  (返金対応処理を行う) as UC18
+  (問い合わせ一覧照会を行う) as UC19
+  (問い合わせ返信をする) as UC20
   
-  (商品追加) as UC21
-  (在庫管理) as UC22
-  (入荷通知) as UC23
+  (商品の追加を行う) as UC21
+  (在庫管理をする) as UC22
+  (入荷を通知する) as UC23
 
-  (売上確認) as UC24
+  (売上を照会する) as UC24
 }
 
 
 
 Customer --> UC1
 Customer --> UC2
+Customer --> UC28
 Customer --> UC3
 Customer --> UC4
+Customer --> UC26
 Customer --> UC5
 Customer --> UC6
 Customer --> UC7
+Customer --> UC29
 Customer --> UC8
 Customer --> UC9
+Customer --> UC27
 Customer --> UC10
+Customer --> UC25
 Customer --> UC12
 Customer --> UC11
 Customer --> UC13
@@ -66,6 +77,7 @@ Ordermanager --> UC14
 Ordermanager --> UC15
 
 Shipmanager --> UC16
+Shipmanager --> UC30
 Shipmanager --> UC17
 
 Sportcenter --> UC18
