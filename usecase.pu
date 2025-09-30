@@ -2,9 +2,12 @@
 left to right direction
 
 actor Customer as "顧客"
-actor Admin as "管理者"
-actor Carrier as "運送会社"
-actor CreditCompany as "クレジットカード会社"
+actor Ordermanager as "注文管理者"
+actor Sportcenter as "サポートセンター"
+actor Inventorymanager as "商品管理者"
+actor Shipmanager as "発送管理者"
+actor Salesmanager as "売上管理者"
+
 
 rectangle "BBシステム" {
   (新規登録) as UC1
@@ -23,26 +26,25 @@ rectangle "BBシステム" {
   (ご利用ガイド参照) as UC13
 } 
 
-rectangle "注文管理システム" {
 
-  (配送処理) as UC24
-}
 rectangle "注文管理システム" {
   (顧客一覧確認) as UC14
   (注文一覧確認) as UC15
+
   (発送準備/発送通知) as UC16
   (発送済み一覧確認) as UC17
+
   (返金対応処理) as UC18
-  
   (問い合わせ一覧確認) as UC19
   (問い合わせ返信) as UC20
   
   (商品追加) as UC21
-  (在庫管理/入荷通知) as UC22
-  (売上確認) as UC23
+  (在庫管理) as UC22
+  (入荷通知) as UC23
+
+  (売上確認) as UC24
 }
 
-(クレジットカード決済処理) as UC25
 
 
 Customer --> UC1
@@ -60,19 +62,23 @@ Customer --> UC11
 Customer --> UC13
 
 
-Admin --> UC14
-Admin --> UC15
-Admin --> UC16
-Admin --> UC17
-Admin --> UC18
-Admin --> UC19
-Admin --> UC20
-Admin --> UC21
-Admin --> UC22
-Admin --> UC23
+Ordermanager --> UC14
+Ordermanager --> UC15
+
+Shipmanager --> UC16
+Shipmanager --> UC17
+
+Sportcenter --> UC18
+Sportcenter --> UC19
+Sportcenter --> UC20
+
+Inventorymanager--> UC21
+Inventorymanager --> UC22
+Inventorymanager--> UC23
 
 
-Carrier --> UC24
-CreditCompany --> UC25
+Salesmanager --> UC24
+
+
 
 @enduml
