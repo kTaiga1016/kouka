@@ -21,6 +21,9 @@ rectangle "BBシステム" {
   
   (お問い合わせ送信) as UC11
   (ご利用ガイド参照) as UC13
+} 
+
+rectangle "注文管理システム" {
 
   (配送処理) as UC24
 }
